@@ -51,7 +51,7 @@ function Main(props) {
         onSelectedTitle(title);
         var searchTitle = title.split(' ').join('+');
         console.log("selected book ", searchTitle.split(' ').join('+'));
-        fetch(`http://openlibrary.org/search.json?q=${searchTitle}`)
+        fetch(`https://openlibrary.org/search.json?q=${searchTitle}`)
         .then(response => response.json())
         .then(data => {
             var res = data;
