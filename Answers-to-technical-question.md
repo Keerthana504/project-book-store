@@ -34,7 +34,7 @@
 
 3.	How would you track down a performance issue in production? Have you ever had to do this?
 
-    When the page takes more than a couple of seconds time to load then it is said to have performance issue. In my experience, I have seen this issue on pages and most probably the fix was done from the back end like query tuning, making the service calls faster. The fix from the UI standpoint is to reduce the amount of the data that is being displayed (eg: instead of displaying 50 rows of data display only 20 rows), use asynchronous calls, writing clean code in chucks called components for reducing redundancy and length of code on a single file, minify the JS files and maintaining the code in local server. 
+    When the page takes more than a couple of seconds time to load then it is said to have performance issue. In my experience, I have seen this issue on pages, debbugged the issue from the UI and checked the logs to analyse any details pertaining to loading issue and most probably the fix was done from the back end like query tuning, making the service calls faster. The fix implemented from the UI standpoint is to reduce the amount of the data that is being displayed (eg: instead of displaying 50 rows of data display only 20 rows), use asynchronous calls, writing clean code in chucks called components for reducing redundancy and length of code on a single file, minify the JS files and maintaining the code in local server. 
 
     There are also other ways of improving the performance, resizing and
     compressing images, using Content Delivery networks, lazy loading and browser caching the frequently used files.
