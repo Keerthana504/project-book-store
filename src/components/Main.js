@@ -78,7 +78,7 @@ function Main(props) {
         
         <div>
             <meta name="viewport" 
-      content="width=device-width, maximum-scale=1.5"></meta>
+      content="width=device-width, maximum-scale=5"></meta>
             <div className="mar-bottom">
                 {/* <p>Please search for any title</p> */}
                 <Dropdown titles={titles} selectedTitle = {userTitle}></Dropdown>
