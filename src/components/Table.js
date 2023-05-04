@@ -1,20 +1,21 @@
-import { useState , useCallback , useTransition } from "react";
+import { useState , useCallback , useTransition ,useMemo ,useRef} from "react";
 //import Sorting from "./Sorting";
 
 function Table(props){
 
-
-    const headings = props.heading? props.heading.headers : '';
-    const response = props.resData ? props.resData.docs : '';
+    var headings = props.heading? props.heading.headers : '';
+    var response = props.resData ? props.resData.docs : '';
     //var bookList = response? processData(response): '';
-    const bookList = response? processData(response): '';
+    var bookList = [];
+    bookList = response? processData(response): [];
+    var showTableHead = bookList.length? true : false;
     const [sortOrder, setSortOrder] = useState('asc');
-    const [data, setData] =  useState(bookList);
-    //const initialBookList = data.concat(bookList);
-    const [isSorting, startTransition] = useTransition({ timeoutMs: 1000 });
+   // const [data, setData] =  useState([]);
+    var column = 'title';
+    const [isSorting, startTransition] = useTransition({ timeoutMs: 3000 });
+    const thRef = useRef(null);
     //console.log(initialBookList);
-
-
+    
     function processData(res) {
         const tableData = [];
         res.forEach((item ) => {
@@ -24,6 +25,7 @@ function Table(props){
             let isbn = item.isbn && item.isbn.length? item.isbn[0]: '';
             const details = {author:author, publish:publish, title:title, isbn:isbn};
             tableData.push(details); 
+            showTableHead = true;
         });
        //[...bookList].concat(tableData);
         return tableData;
@@ -61,24 +63,46 @@ function Table(props){
         //       setData(sortedData);
         //     }, [unSortedData]);
 
+    const sortedList = useMemo(() => {
+       //const initialBookList= data.concat(bookList);
+       //setData(initialBookList);
+       const sortedData = [...bookList].sort((a, b) => {
+            if (a[column] < b[column]) {
+                return sortOrder === 'asc' ? -1 : 1;
+            }
+            if (a[column] > b[column]) {
+                return sortOrder === 'asc' ? 1 : -1;
+            }
+            return 0;
+        });
+        bookList = sortedData.length ? sortedData : [];
+    }, [bookList]);
 
-    function sortData(column) {
-        startTransition(() => {
-            const sortedData = [...bookList].sort((a, b) => {
-                if (a[column] < b[column]) {
-                    return sortOrder === 'asc' ? -1 : 1;
-                }
-                if (a[column] > b[column]) {
-                    return sortOrder === 'asc' ? 1 : -1;
-                }
-                return 0;
-            });
-            setData([...sortedData]);
+    // const sortData = () => {
+    //    column = thRef.current.textContent;
+    //   };
+
+    function sortData(event) {
+        // console.log("event", event);
+        // event.preventDefault();
+        //column = col;
+        //column = event.currentTarget.__reactProps$e2b4ffk6ced.value;
+       // startTransition(() => {
+            // const sortedData = [...bookList].sort((a, b) => {
+            //     if (a[column] < b[column]) {
+            //         return sortOrder === 'asc' ? -1 : 1;
+            //     }
+            //     if (a[column] > b[column]) {
+            //         return sortOrder === 'asc' ? 1 : -1;
+            //     }
+            //     return 0;
+            // });
+            // bookList = sortedData;
+            //setData(sortedData);
             //data = sortedData;
             setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-        });
+       // });
     }
-
 
     console.log("list", bookList);
     console.log("table props", props);
@@ -90,10 +114,10 @@ function Table(props){
         <table className="my-table">
             <thead>
                 <tr>
-                    {bookList && 
+                    {bookList && showTableHead &&
                         headings.map((item) =>(
                             //<th key={item.head} onClick= {<Sorting column={item.head} data={bookList}></Sorting>}> 
-                            <th key={item.head} onClick= {() => sortData(item.colName)} disabled={isSorting}> 
+                            <th key={item.head} onClick= {item.sortable ? sortData : null} disabled={isSorting}> 
                             {item.head} {item.sortable ? sortOrder === 'asc' ? '▲' : '▼': '' }  </th> 
                         )) 
                     }

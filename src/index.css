@@ -1,10 +1,23 @@
 body {
-  margin: 0;
+  /* margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.quote {
+  padding-bottom: 34px;
+  font-size: 1.50rem;
+  font-family: cursive;
+  color: antiquewhite;
 }
 
 .my-table {
@@ -14,7 +27,11 @@ body {
 }
 
 .bg-color{
-  background: azure;
+  /* background: azure; */
+  background-image: url('./images/Book-bg.jpg');
+  height: 100;
+  width: 200;
+  /* display: flex; */
 }
 
 .mar-bottom{
@@ -32,6 +49,9 @@ body {
 .my-table th {
   background-color: #f2f2f2;
   font-weight: bold;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
 }
 
 .dropdown {

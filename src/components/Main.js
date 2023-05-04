@@ -26,7 +26,7 @@ function Main(props) {
             { head: "Title", colName: "title", sortable: true },
             { head: "Book Cover", colName: "cover", sortable: false },
             { head: "Author", colName: "author", sortable: false },
-            { head: "Published", colName: "published", sortable: true },
+            { head: "Published", colName: "published", sortable: false },
         ]
     } 
     var showTable = false;
@@ -77,6 +77,8 @@ function Main(props) {
     return (
         
         <div>
+            <meta name="viewport" 
+      content="width=device-width, maximum-scale=1.5"></meta>
             <div className="mar-bottom">
                 {/* <p>Please search for any title</p> */}
                 <Dropdown titles={titles} selectedTitle = {userTitle}></Dropdown>

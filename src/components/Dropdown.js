@@ -30,11 +30,11 @@ function Dropdown(props){
                         {/* {items ? items.books.map((item)=>{
                             <option value="book1" onChange={selectedTitleHandler} >item</option>
                         }):null} */}
-                <option class="dropdown-content" value="Select"  key="Select">Select a Book</option>
+                <option class="dropdown-content" value="Select"  key="Select">Please select a Title to search</option>
                 {
                     //each item in the dropdown should have a key        
                     items.books.map((list) =>(
-                        <option class="dropdown-content" value={list}  key={list}  > {list}</option>
+                        <option class="dropdown-content" value={list}  key={list}  > {list}</option>    
                     ))
                 }  
             </select>

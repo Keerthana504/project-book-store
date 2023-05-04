@@ -8,6 +8,7 @@
             4.	Register the users and save their search for future use. 
             5.	Implement a pagination component as the data is displayed in a table format.
             6.	Add a loader while fetching data from a service.
+            7.  Add information texts for each element just to give the user some extra information about what that field is for.
 
         ii.	Improve code quality.
             1.	There can be components to isolate the functionality and maintain the readability of the code.
