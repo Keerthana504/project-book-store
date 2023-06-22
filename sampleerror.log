@@ -1,0 +1,4 @@
+ERROR---The filter has emitted a chunk which it was not requested to emit. Check
+    the initialization parameters in section Test1 of the initialization file.
+ 
+INFO----Current chunk propid : 0x5
