@@ -15,9 +15,22 @@
             2.	Instead of a single CSS file I would have created a dedicated CSS file for each component and used bootstrap classes for the look and feel.
             3.	Would have used redux library implementation if there was more data flow. 
 
+            Redux:
+
+            A store — an object that holds the app state data
+            A reducer — a function that returns some state data, triggered by an action type
+            An action — an object that tells the reducer how to change the state. It must contain a type property, and it can contain an optional payload property
+            A Dispatcher -: Dispatch is a method provided by the Redux store to send actions to the reducers. It triggers the state update process by passing the action object to the reducers, which then produce a new state.
+
     b.	If you didn't spend much time on the coding test, then use this as an opportunity to explain what you would add.
 
 2.	What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
+
+React provides a built-in React.lazy() function and the Suspense component that enable lazy loading of components. Here's how you can implement lazy loading in React:
+
+const MyLazyComponent = React.lazy(() => import('./MyLazyComponent'));
+
+MyLazyComponent is the component you want to lazily load. It uses the React.lazy() function, which takes a function that returns a dynamic import statement. The dynamic import loads the component asynchronously when it is needed.
 
     import { Suspense } from 'react';
     import MyLoadingComponent from './MyLoadingComponent';
@@ -26,7 +39,7 @@
     function MyComponent() {
     return (
         <div>
-        <Suspense fallback={<MyLoadingComponent />}>
+        <Suspense fallback={<MyLoadingComponent />}> // will be loaded after MyAsyncComponent is loaded
             <MyAsyncComponent />
         </Suspense>
         </div>

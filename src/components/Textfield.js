@@ -1,10 +1,5 @@
-function Textfield(){
-    return (
-        <div>
-            
-        </div>
-    );
-
+function Textfield() {
+  return <div></div>;
 }
 
 export default Textfield;

@@ -27,8 +27,8 @@ body {
 }
 
 .bg-color{
-  /* background: azure; */
-  background-image: url('./images/Book-bg.jpg');
+  background: #bde0fe;
+  /* background-image: url('./images/Book-bg.jpg'); */
   height: 100;
   width: 200;
   /* display: flex; */

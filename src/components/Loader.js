@@ -1,5 +1,5 @@
-function Loader(){
-    return;
+function Loader() {
+  return;
 }
 
 export default Loader;
