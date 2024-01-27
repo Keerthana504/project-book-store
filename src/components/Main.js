@@ -1,6 +1,5 @@
 import Dropdown from "./Dropdown";
-import Table from "./Table";
-import FirstTest from "./FirstTest";
+import Card from "./Card";
 import { useState } from "react";
 
 function Main(props) {
@@ -100,15 +99,18 @@ function Main(props) {
       ></meta>
       <div className="mar-bottom">
         {/* <p>Please search for any title</p> */}
-        <Dropdown titles={titles} selectedTitle={userTitle}></Dropdown>
+        <section className="main">
+          <h1>Beyond Stories</h1>
+          <Dropdown titles={titles} selectedTitle={userTitle}></Dropdown>
+        </section>
+        <p className="quote">
+          A reader lives a thousand lives before he dies . . . The man who never
+          reads lives only one -- George RR Martin
+        </p>
       </div>
       <div>
         {/* <Table resData = {searchResults ? searchResults : null} heading={tableHeader}></Table> */}
-        <Table
-          tableData={tableData}
-          resData={searchResults}
-          heading={tableHeader}
-        ></Table>
+        <Card resData={searchResults}></Card>
       </div>
       {/* <div><FirstTest/></div> */}
     </div>

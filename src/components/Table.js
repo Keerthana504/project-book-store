@@ -141,7 +141,6 @@ function Table(props) {
             <tbody>
               <tr key={i}>
                 <td>
-                  {" "}
                   <img
                     src={`https://covers.openlibrary.org/b/isbn/${item.isbn}-M.jpg`}
                     alt="Image not available"
