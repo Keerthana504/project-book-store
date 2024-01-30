@@ -189,14 +189,10 @@ function Main(props) {
         {/* <Table resData = {searchResults ? searchResults : null} heading={tableHeader}></Table> */}
         <Card resData={searchResults}></Card>
       </section>
-      {/* <section className="kids-sec">
+      <section className="kids-sec">
         DISCOVER MORE KIDS' BOOKS <button>Shop All Kids Books </button>
       </section>
-      <section className="trending-sec">
-        TRENDING CATEGORIES <button>Staff Picks </button>
-        <button>Mystery </button>
-        <button>Cook Books </button>
-      </section> */}
+
       <section className="new-sec">
         <div>
           <p>NEW Marvel Comics</p>
@@ -209,8 +205,16 @@ function Main(props) {
           <a>View All</a>
         </div>
       </section>
+      <section className="trending-sec">
+        <p>TRENDING CATEGORIES</p>
+        <div>
+          <button>Staff Picks </button>
+          <button>Mystery </button>
+          <button>Cook Books </button>
+        </div>
+      </section>
       <section className="testimonials">
-        <div></div>
+        <div> Tesiminials...</div>
       </section>
       <section className="donations">
         <div>
