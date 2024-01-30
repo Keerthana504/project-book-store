@@ -37,7 +37,6 @@ function Dropdown(props) {
         //each item in the dropdown should have a key
         items.books.map((list) => (
           <option className="dropdown-content" value={list} key={list}>
-            {" "}
             {list}
           </option>
         ))

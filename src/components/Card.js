@@ -32,8 +32,13 @@ const Card = (props) => {
                 alt="Image not available"
               ></img>
               <p id="book-title">{book.title}</p>
-              <p> {book.author}</p>
-              <p>{book.publish}</p>
+              <p>
+                {" "}
+                {book.author} - {book.publish}
+              </p>
+              <p>
+                <button class="btn-cart">Add to Card</button>
+              </p>
             </div>
           );
         })}
