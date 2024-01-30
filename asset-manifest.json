@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/project-book-store/static/css/main.09df6526.css",
-    "main.js": "/project-book-store/static/js/main.57efc445.js",
+    "main.css": "/project-book-store/static/css/main.651cd00c.css",
+    "main.js": "/project-book-store/static/js/main.c238625a.js",
+    "static/media/school-decoration-with-blank-slate.jpg": "/project-book-store/static/media/school-decoration-with-blank-slate.9b5531e31f8f70385c5c.jpg",
     "index.html": "/project-book-store/index.html",
-    "main.09df6526.css.map": "/project-book-store/static/css/main.09df6526.css.map",
-    "main.57efc445.js.map": "/project-book-store/static/js/main.57efc445.js.map"
+    "main.651cd00c.css.map": "/project-book-store/static/css/main.651cd00c.css.map",
+    "main.c238625a.js.map": "/project-book-store/static/js/main.c238625a.js.map"
   },
   "entrypoints": [
-    "static/css/main.09df6526.css",
-    "static/js/main.57efc445.js"
+    "static/css/main.651cd00c.css",
+    "static/js/main.c238625a.js"
   ]
 }
